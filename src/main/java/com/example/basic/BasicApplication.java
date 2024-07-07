@@ -12,7 +12,10 @@ public class BasicApplication {
 
     public static void main(String[] args) {
         UserRepositoryInterface userRepository = new UserRepository();
+        UserRepositoryInterface userRepository2 = new UserRepository2();
 
+        new UserService(userRepository);
+        new UserService(userRepository2);
 
         SpringApplication.run(BasicApplication.class, args);
     }
