@@ -2,6 +2,7 @@ package com.example.basic;
 
 import org.springframework.stereotype.Repository;
 
+// UserRepositor가 IoC컨테이너에 올라간 것.
 @Repository
 public class UserRepository implements UserRepositoryInterface {
 
