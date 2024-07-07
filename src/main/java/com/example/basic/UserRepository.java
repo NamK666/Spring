@@ -9,7 +9,6 @@ public class UserRepository implements UserRepositoryInterface {
     public void save(User user) {
         System.out.println("User saved");
     }
-
     @Override
     public void delete(User user) {
         System.out.println("User deleted");
