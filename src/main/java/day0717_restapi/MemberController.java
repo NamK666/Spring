@@ -1,11 +1,9 @@
-package net.chimaek.day0717_restapi;
+package day0717_restapi;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import day0717_restapi.Member;
-import day0717_restapi.MemberDTO;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +13,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api/members")
@@ -38,11 +35,13 @@ public class MemberController {
     }
 
     @GetMapping("/{id}")
-    public Member getMemberById(@PathVariable("id") Long id) {
-        return members.stream()
+    public ResponseEntity<MemberDTO> getMemberById(@PathVariable("id") Long id) {
+        Member member1 = members.stream()
                 .filter(member -> member.getId() == id)
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("뭐시여 이건. 에러여?"));
+        MemberDTO memberDTO = new MemberDTO(member1.getEmail());
+        return ResponseEntity.status(404).body(memberDTO);
     }
 
     @PutMapping("/{id}")
@@ -62,6 +61,4 @@ public class MemberController {
     public void deleteMember(@PathVariable("id") Long id) {
         members.removeIf(member -> member.getId() == id);
     }
-
-
 }

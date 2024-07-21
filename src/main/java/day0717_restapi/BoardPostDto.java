@@ -6,11 +6,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-@Getter
-@Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
 public class BoardPostDto {
     private Long id;
     private String title;
