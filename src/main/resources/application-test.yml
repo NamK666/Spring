@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: est-service-test
+
+  devtools:
+    restart:
+      enabled: true
+
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/daily715
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8

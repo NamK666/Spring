@@ -1,7 +1,9 @@
+/*
 package day0717_restapi;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -47,3 +49,5 @@ public class BoardPostService {
 		return boardPostDto;
 	}
 }
+
+ */
