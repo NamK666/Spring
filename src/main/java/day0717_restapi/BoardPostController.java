@@ -1,3 +1,4 @@
+/*
 package day0717_restapi;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,3 +25,4 @@ public class BoardPostController {
         return ResponseEntity.ok(createdBoardPostDto);
     }
 }
+*/
